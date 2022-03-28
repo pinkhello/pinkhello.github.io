@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>dubbo on pinkhello</title><link>https://pinkhello.cc/tags/dubbo/</link><description>Recent content in dubbo on pinkhello</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>pinkhello</copyright><lastBuildDate>Fri, 01 Oct 2021 10:04:00 +0800</lastBuildDate><atom:link href="https://pinkhello.cc/tags/dubbo/index.xml" rel="self" type="application/rss+xml"/><item><title>探秘负载均衡</title><link>https://pinkhello.cc/posts/36-%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E7%9A%84%E6%80%9D%E8%80%83/</link><pubDate>Fri, 01 Oct 2021 10:04:00 +0800</pubDate><guid>https://pinkhello.cc/posts/36-%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E7%9A%84%E6%80%9D%E8%80%83/</guid><description>前言 今天是国庆的第3天，在此恭祝小哥哥和小姐姐们⛱️节日快乐！ 微信朋友圈🀄️全部是 旅途ING。
+我的国庆：
+第一天: 带🪆 第二天: 被启东坑了一回 第三天: 🈚️孩一身轻 &amp;hellip;&amp;hellip; 对于我这种社交尴尬者，⛱️度假最好的方式还是学习。
+今日带来了 自己对于负载均衡(load balance)的学习。
+度假最好的方式是学习 GRPC在负载均衡的设计: Load-balancing.md
+为什么要负载均衡 在如今的互联网领域，对于数据的大爆发，高频的请求，对于提供服务的企业来说是不小的IT资源开销。为了解决资源中的负载分配，并且使得资源的利用率达到最大。出现了负载均衡，主要为了解决 高并发 和 高可用。
+负载均衡的实现方式有：软件 和 硬件。这次我学习的主是软件方式。
+负载均衡的算法 轮询( Round Robin ) &amp;amp; 加权轮询( Weight Round Robin ) : 随机 &amp;amp; 加权随机 最少连接( Last Connections ) : 通过将流量引导到第一个可用服务器然后将该服务器移动到队列底部来轮换服务器，当服务器具有相同的规格并且没有很多持久连接时最有用。 哈希( Hash ) eg: ip hash 一致性哈希( Consistent Hash ) eg: request_url 一致性哈希 最少响应时间 : 将流量定向到活动连接最少且平均响应时间最短的服务器。 常用的负载均衡手段 Load-balancing.md 已经介绍了以下几种</description></item></channel></rss>

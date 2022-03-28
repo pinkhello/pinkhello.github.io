@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rpc on pinkhello</title><link>https://pinkhello.cc/tags/rpc/</link><description>Recent content in Rpc on pinkhello</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>pinkhello</copyright><lastBuildDate>Wed, 13 Feb 2019 10:00:00 +0800</lastBuildDate><atom:link href="https://pinkhello.cc/tags/rpc/index.xml" rel="self" type="application/rss+xml"/><item><title>如何构建一个简单的RPC调用</title><link>https://pinkhello.cc/posts/04-%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84rpc%E8%B0%83%E7%94%A8/</link><pubDate>Wed, 13 Feb 2019 10:00:00 +0800</pubDate><guid>https://pinkhello.cc/posts/04-%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84rpc%E8%B0%83%E7%94%A8/</guid><description>1、什么叫RPC?
+RPC构成
+RPC Consumer RPC Provider ConfigServer 1、Provider 启动 ConfigServer 注册服务 2、Consumer 启动 ConfigServer 订阅服务， 3、发起调用 Consumer &amp;mdash;&amp;gt; Provider 4、响应调用 Consumer &amp;lt;&amp;mdash; Provider 2、什么是 Netty ? https://netty.io/
+3、现有的开源的项目是否使用了 Netty ?
+Dubbo Grpc Spark &amp;hellip;. 4、RPC Provider 启动
+Netty Server 方式启动 Rpc 服务的注册 5、RPC Consumer 启动
+Netty Client 方式启动 RPC 泛化调用、通过字节码基于反射来实现远程调度 Consumer 服务订阅 启动时建立长连接 6、从第四可以看出，多个 Provider 是由一个 NettyServer 提供的，通过 HandlerMap 映射找到对应的 Ioc Bean，完成服务调用</description></item></channel></rss>

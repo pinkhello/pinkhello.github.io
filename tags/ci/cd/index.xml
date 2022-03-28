@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CI/CD on pinkhello</title><link>https://pinkhello.cc/tags/ci/cd/</link><description>Recent content in CI/CD on pinkhello</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>pinkhello</copyright><atom:link href="https://pinkhello.cc/tags/ci/cd/index.xml" rel="self" type="application/rss+xml"/><item><title>Gitlab CI CD</title><link>https://pinkhello.cc/posts/cicd/</link><pubDate>Mon, 28 Mar 2022 10:23:58 +0800</pubDate><guid>https://pinkhello.cc/posts/cicd/</guid><description>基本概念 CI，Continuous Integration 持续集成， 即在代码构建过程中持续的对代码进行集成、构建、自动化测试。 CD，Continuous Deployment 持续交付，即在代码构建完毕后，可以方便的进行部署上线，快速迭代交付产品。 Gitlab CI/CD 先看一张图，介绍了 Gitlab CI/CD 的工作流程
+上图是一个通用的开发流程，从代码实现开始、提交，通过代码的改变触发 CI/CD pipeline，后续通过 CR 和 Approve，代码才合并进入分支/
+更丰富的操作:
+CI/CD pipelines pipelines 包含两个核心的，它是 CI/CD 顶级组件。
+Jobs 定义了要做什么。(eg：compile job or test job) Stages 定义了如何做。 如果一个 Stage 中的所有的 Job 都成功，则 pipeline 进入下一个 Stage。 如果一个 Stage 中任何 Job 失败，一般不会到下一个 Stage，并且 pipeline 会提前结束。
+典型的一个 pipeline 的操作:
+build stage， 使用一个 job 去 compile 代码 test stage，使用 多个 job 去跑 ut test staing stage，使用 分布部署阶段 production stage，启动 job 生成部署阶段 Jobs pipeline 的配置从 job 开始了，job 是 .</description></item><item><title>Fabric使用</title><link>https://pinkhello.cc/posts/07-fabric%E4%BD%BF%E7%94%A8/</link><pubDate>Sun, 28 Mar 2021 08:00:00 +0800</pubDate><guid>https://pinkhello.cc/posts/07-fabric%E4%BD%BF%E7%94%A8/</guid><description>docker 加入systemctl环境并启动docker 快速安装docker
+curl -sSL https://get.daocloud.io/docker | sh systemctl enable docker systemctl start docker docker-compose 安装 走外网或者 github 太慢,可以使用内部加速
+curl -L &amp;#34;https://github.com/docker/compose/releases/download/X.XX.X/docker-compose-$(uname -s)-$(uname -m)&amp;#34; -o /usr/local/bin/docker-compose curl -L https://get.daocloud.io/docker/compose/releases/download/1.26.2/docker-compose-`uname -s`-`uname -m` &amp;gt; /usr/local/bin/docker-compose fabric 自动运维 python 虚拟环境安装 参考
+创建一个独立的虚拟环境
+cd 目标目录 virtualenv --no-site-packages venv 激活虚拟环境
+source venv/bin/activate python pip 安装 Fabric pip install fabric3 python pip 导出依赖 pip freeze &amp;gt; requirements.txt 其他python pip 导入安装 pip install -r requirements.txt Fabric 文档 fabfiles 文档 # encoding=utf-8 from fabric.</description></item></channel></rss>
