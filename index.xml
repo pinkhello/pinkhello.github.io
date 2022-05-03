@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>pinkhello</title><link>https://pinkhello.cc/</link><description>Recent content on pinkhello</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>pinkhello</copyright><lastBuildDate>Tue, 03 May 2022 17:30:49 +0800</lastBuildDate><atom:link href="https://pinkhello.cc/index.xml" rel="self" type="application/rss+xml"/><item><title>JVM类加载机制</title><link>https://pinkhello.cc/posts/jvm%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/</link><pubDate>Tue, 03 May 2022 17:30:49 +0800</pubDate><guid>https://pinkhello.cc/posts/jvm%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/</guid><description>类加载系统 JVM核心的结构里面有一个就是 类加载系统。 一个java代码经过编译器后变成class字节码文件，后续在运行时，字节码需要通过JVM的类加载系统执行运行。
 类加载系统
-类的加载过程 类的生命周期 类加载器种类 类加载机制 类加载过程和生命周期 类的生命周期包括: 加载、链接（验证、准备、解析）、初始化、使用和卸载，
-加载 通过类全限定名来获取二进制字节流、 字节流描述的静态存储结构转换为方法区的运行时数据结构 在Heap中生成一个代表这个类的Class对象，作为方法区访问这些数据的入口 链接 验证 确保被加载的类的正确性
+类的加载过程 类的生命周期 类加载器种类 类加载机制 类生命周期 类的生命周期包括: 加载、链接（验证、准备、解析）、初始化、使用和卸载，
+加载
+通过类全限定名来获取二进制字节流、 字节流描述的静态存储结构转换为方法区的运行时数据结构 在Heap中生成一个代表这个类的Class对象，作为方法区访问这些数据的入口 链接
+验证 确保被加载的类的正确性
 文件格式验证，字节流是否符合Class文件格式，如0xCAFFBABE开头、版本号、常量类型等等 元数据验证, 多字节码描述性信息进行语义分析、确保符合规范 字节码验证 符号引用验证 准备 为类的 静态变量 分配内存，并将其初始化成默认值
 解析 把类中的符号引用转换为直接引用(直接指向目标的指针、相对偏移量或间接定位到目标的句柄), 主要针对类或接口、字段、类方法、接口方法、方法类型、方法句柄、调用点限定符等符号引用进行。
-初始化 加载、链接（验证、准备、解析）、初始化 属于 类加载的过程
+类加载过程 加载、链接（验证、准备、解析）、初始化 属于 类加载的过程
 类加载过程从上图可看见
 第一个阶段 Loading 通过类的全限定名获取到该类的class二进制字节码流数据，将二进制流数据代表的静态存储结构转换成方法区运行时的数据结构
 第二个阶段 Linking 验证 Verify: 保证class文件字节流是符合JVM的要求，确保安全 准备 Prepare: 为静态字段分配内存并设置初始化默认值（被final修饰的static字段不会设置，在编译阶段就分配了） 解析 Resolve: 解析是为了将常量迟的符号引用转换为直接引用(实际引用)，如果符号引用指向未被加载的类，或未被加载的类的字段或方法，那么解析触发了这个类的加载（但是不一定触发这个类的Linking和Initialization） 第三个阶段 Initialization 初始化阶段是执行类的构造方法，init() 的过程,(编译器自动收集类的所有变量赋值动作和静态代码块语句合并的） 若该类有父类,JVM保证父类先执行init然后执行子类的init</description></item><item><title>Java内存泄漏的方式</title><link>https://pinkhello.cc/posts/java%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E7%9A%84%E6%96%B9%E5%BC%8F/</link><pubDate>Tue, 03 May 2022 01:10:31 +0800</pubDate><guid>https://pinkhello.cc/posts/java%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E7%9A%84%E6%96%B9%E5%BC%8F/</guid><description>Java 会有内存泄漏么？ 我们都知道 Java 是自动管理内存的，且核心的就是GC机制，即然提出这个问题，那就是肯定是存在内存泄漏的问题的。只不过是以哪种方式而已
