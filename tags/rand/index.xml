@@ -2,4 +2,4 @@
 var globalRand = New(&amp;amp;lockedSource{src: NewSource(1).(*rngSource)}) 竟然是全局共享的一个 全局的 globalRand 的 对象。可以猜想到在多 goroutine 下，性能应该比较差，存在竞争的情况。
 验证 随机验证一下, 验证一下
 第一种情况，就是普通的并发情况下使用默认的 rand 库。使其共用一个 globalRand 对象。 func BenchmarkGlobalRand_test(b *testing.B) { b.RunParallel(func(p *testing.PB) { for p.Next() { rand.Intn(200) } }) } 输出
-BenchmarkGlobalRand_test BenchmarkGlobalRand_test-8 16704190 72.53 ns/op 0 B/op 0 allocs/op BenchmarkGlobalRand_test-8 17005326 68.90 ns/op 0 B/op 0 allocs/op BenchmarkGlobalRand_test-8 17651659 66.54 ns/op 0 B/op 0 allocs/op BenchmarkGlobalRand_test-8 17879901 68.</description></item></channel></rss>
+BenchmarkGlobalRand_test BenchmarkGlobalRand_test-8 16704190 72.53 ns/op 0 B/op 0 allocs/op BenchmarkGlobalRand_test-8 17005326 68.90 ns/op 0 B/op 0 allocs/op BenchmarkGlobalRand_test-8 17651659 66.54 ns/op 0 B/op 0 allocs/op BenchmarkGlobalRand_test-8 17879901 68.07 ns/op 0 B/op 0 allocs/op 第二种情况，在每个 goroutine 内创建一个 rand 对象，达到不共享的效果 func BenchmarkCustomRand_test(b *testing.</description></item></channel></rss>

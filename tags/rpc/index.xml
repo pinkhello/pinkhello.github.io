@@ -4,4 +4,5 @@ RPC Consumer RPC Provider ConfigServer 1、Provider 启动 ConfigServer 注册�
 3、现有的开源的项目是否使用了 Netty ?
 Dubbo Grpc Spark &amp;hellip;. 4、RPC Provider 启动
 Netty Server 方式启动 Rpc 服务的注册 5、RPC Consumer 启动
-Netty Client 方式启动 RPC 泛化调用、通过字节码基于反射来实现远程调度 Consumer 服务订阅 启动时建立长连接 6、从第四可以看出，多个 Provider 是由一个 NettyServer 提供的，通过 HandlerMap 映射找到对应的 Ioc Bean，完成服务调用</description></item></channel></rss>
+Netty Client 方式启动 RPC 泛化调用、通过字节码基于反射来实现远程调度 Consumer 服务订阅 启动时建立长连接 6、从第四可以看出，多个 Provider 是由一个 NettyServer 提供的，通过 HandlerMap 映射找到对应的 Ioc Bean，完成服务调用
+服务端 EventLoopGroup bossGroup = new NioEventLoopGroup(1); EventLoopGroup workerGroup = new NioEventLoopGroup(); try { ServerBootstrap b = new ServerBootstrap(); b.</description></item></channel></rss>

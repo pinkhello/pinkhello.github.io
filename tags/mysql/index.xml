@@ -9,4 +9,5 @@ InnoDB 内部为每一行记录添加 三个隐藏的列，
 DB_TRX_ID 创建记录/最后更新记录的事务ID,(删除也被视作更新，设置行的特殊位标记位删除) DB_ROLL_PTR 回滚指针，执行这条记录的上一个版本(rollback segment ： undo log，记录了更新前重建该记录的所需的信息) DB_ROW_ID 隐藏自增ID, 如果没有主键，就会以DB_ROW_ID 产生聚簇索引，随着插入新行，自增的， rollback segment 分为两种
 inert undo log ，仅在事务回滚的时候需要，事务提交后立即丢弃 update undo log ，用于一致性读取，只有在 没有事务存在，且 头信息里面还有一个 delete_flag (bit) 标记为该记录是否删除
 [待丰富]&amp;hellip;..
-ETCD 中 MVCC mvcc</description></item></channel></rss>
+ETCD 中 MVCC mvcc
+ETCD 使用 revision 作为一条记录的版本，revision 对于 etcd 的集群来说就像 逻辑时钟，每个数据发生更改做更新。</description></item></channel></rss>
