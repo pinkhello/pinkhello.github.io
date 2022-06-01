@@ -2,7 +2,7 @@
 ❤️ 职位描述/工作职责 工作方式: Remote
 工作形式: 每个月咨询 5-6次，时长约 1～2 小时 我会准备好我开发的App、以及遇到的问题和我所能想到的解决方式方法。
 工作内容:
-未来的行业方向与作为入局人的职业方向 审核我写的代码、并加以改价和优化 讨论一些项目的开发方向和简介 &amp;hellip;&amp;hellip; 职位要求
+未来的行业方向与作为入局人的职业方向 对我写的代码进行CR、并加以改正与优化 讨论一些项目的开发方向和简介 &amp;hellip;&amp;hellip; 职位要求
 从事软件行业至少3+年以上经验，从事区块链至少2+年以上经验， 熟悉Bitcoin、Ethereum、Fabric等至少一种架构和技术细节； 精通 Solidity 智能合约语言及开发、优化，熟悉 Truffle、Remix、Waffle 等开发、测试、部署工具，熟悉OpenZeppelin等合约库； 熟悉网络编程、多线程/协程编程，熟悉EVM、密码学、有区块链项目背景； 精通 Rust/Golang/Java 等至少一种语言； 有各大公链、联盟链不同的架构与应用场景； 加分项
 有 Github 开源项目 有 个人博客 薪资与待遇 : 麻烦您发个邮件报价，报价以 小时 或 数量 为参考, 如
 ￥500/Hour ￥1000/次咨询 联系方式（全球通用加密） Email: bGVlMTIzbGVlMTIzQDE2My5jb20K</description></item><item><title>Systemd服务笔记</title><link>https://pinkhello.cc/posts/systemd%E6%9C%8D%E5%8A%A1%E7%AC%94%E8%AE%B0/</link><pubDate>Mon, 09 May 2022 22:56:19 +0800</pubDate><guid>https://pinkhello.cc/posts/systemd%E6%9C%8D%E5%8A%A1%E7%AC%94%E8%AE%B0/</guid><description>前言 今天离线数仓调度 airflow 任务出现问题，经过查看服务状态，确定是 airflow worker 的存在问题，并行dag最大是数量16，但是发现不止16个, 而查看配置文件是对的，所以就怀疑是启动脚本存在问题。发现启动是以 systemd 服务化启动的，确定了是停止脚本的问题。所以回头来记录一下 systemd 的知识。
