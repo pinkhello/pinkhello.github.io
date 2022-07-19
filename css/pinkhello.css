@@ -20,11 +20,24 @@ ul {
     margin-block-end: 3px;
 }
 
+table {
+    font-size: 13px;
+}
+
+th {
+    padding: 4px;
+    font-size: 15px;
+}
+
+td {
+    padding: 4px 4px;
+}
 
 article .content p {
     margin-block-start: 3px;
     margin-block-end: 3px;
 }
+
 article .content p  img {
     display: inline-block !important;
 }
