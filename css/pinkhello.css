@@ -15,6 +15,11 @@ blockquote {
     margin-inline-end: 0px;
 }
 
+ul {
+    margin-block-start: 3px;
+    margin-block-end: 3px;
+}
+
 
 article .content p {
     margin-block-start: 3px;
