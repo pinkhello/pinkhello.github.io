@@ -1,15 +1,18 @@
-article .content p > img {
-    display: inline-block !important;
+h1, .h1 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
-article .content p > a > img {
-    display: inline-block !important;
+h2, .h2 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 article .content p {
-    display: block;
     margin-block-start: 3px;
     margin-block-end: 3px;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
 }
+article .content p  img {
+    display: inline-block !important;
+}
+
