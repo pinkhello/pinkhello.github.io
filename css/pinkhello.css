@@ -1,3 +1,15 @@
 article .content p > img {
     display: inline-block !important;
 }
+
+article .content p > a > img {
+    display: inline-block !important;
+}
+
+article .content p {
+    display: block;
+    margin-block-start: 3px;
+    margin-block-end: 3px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
