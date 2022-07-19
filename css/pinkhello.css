@@ -8,6 +8,14 @@ h2, .h2 {
     margin-bottom: 1rem;
 }
 
+blockquote {
+    margin-block-start: 3px;
+    margin-block-end: 3px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+
 article .content p {
     margin-block-start: 3px;
     margin-block-end: 3px;
