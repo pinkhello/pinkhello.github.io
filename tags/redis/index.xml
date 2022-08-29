@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>redis on pinkhello</title><link>https://pinkhello.cc/tags/redis/</link><description>Recent content in redis on pinkhello</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>pinkhello</copyright><lastBuildDate>Mon, 29 Aug 2022 15:15:21 +0800</lastBuildDate><atom:link href="https://pinkhello.cc/tags/redis/index.xml" rel="self" type="application/rss+xml"/><item><title>重学Redis</title><link>https://pinkhello.cc/posts/redis/</link><pubDate>Mon, 29 Aug 2022 15:15:21 +0800</pubDate><guid>https://pinkhello.cc/posts/redis/</guid><description>redis redis 是BSD许可的开源内存数据中间件，可以用作 数据库、缓存、消息Broker、流引擎。
+redis 数据类型 data structures:
+strings hashes lists sets sorted sets [range queries] bitmaps hyperloglogs geospatial indexes streams redis key 的推荐规则 keys rule:
+不要设置过长的KEY 过短的KEY也不建议 适中，并且能达意的，考虑用分隔符 最大的KEY SIZE: 512MB. String Redis 存储字符序列、可以是 文本、序列话对象、二进制数组。支持 incr 操作。
+SET SETNX GET MEGT 大部分字符串操作都是 O(1), 但是 SUBSTR、GETRANGE、SETRANGE 可能是 O(n)
+Redis String 是才赢得 SDS 实现的（Simple dynamic string）
+在执行 set hello helloval后底层是
+那么键的字符串对象，底层创建保存 &amp;lsquo;hello&amp;rsquo; 的SDS 那么值也是字符串对象，底层创建保存字符串的 &amp;lsquo;helloval&amp;rsquo; 的SDS SDS 的结构体
+struct sdshdr { char buf[]; //字节数组，用于保存字符串 int len; //记录buf数组中已经使用字节的数量 int free; //记录buf数组内未使用的字节的数量 } 对比C，有专门的字段记录buf数组的字符串长度和空闲 时间复杂度O(1) 对比C，记录字符串了长度，在进行分配的时候，或修改的时候，杜绝了缓冲区溢出的可能性，在SDS API对SDS进行修改的时候，会先检查空间是否满足修改的需求，不满足的话，会先拓展至执行所需要的大小，再执行修改操作。 减少字符串修改带来的内存重分配操作， 通过 free 参数记录未使用的空间，这样实现了空间预分配和惰性空间释放策略 二进制安全。因为有 len 属性，不需要判断字符串确认是否是末尾。可以存储任意结构的二进制数据 兼容部分C函数 Lists 通过链表实现的、即使有数百万元素，在列表头部或尾部添加新元素的操作都是O(1): LPUSH 同时向10个元素和100万个元素添加头部元素的速度是相同的。</description></item></channel></rss>
