@@ -19,7 +19,7 @@
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>int</span> hash<span style=color:#f92672>;</span> <span style=color:#75715e>// Default to 0 
 </span></span></span><span style=display:flex><span><span style=color:#75715e></span>    
 </span></span><span style=display:flex><span>    <span style=color:#75715e>/** use serialVersionUID from JDK 1.0.2 for interoperability */</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>final</span> <span style=color:#66d9ef>long</span> serialVersionUID <span style=color:#f92672>=</span> <span style=color:#f92672>-</span>6849794470754667710L<span style=color:#f92672>;</span>   
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>final</span> <span style=color:#66d9ef>long</span> serialVersionUID <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>6849794470754667710L</span><span style=color:#f92672>;</span>   
 </span></span><span style=display:flex><span>    
 </span></span><span style=display:flex><span>    <span style=color:#75715e>/**
 </span></span></span><span style=display:flex><span><span style=color:#75715e>     * Class String is special cased within the Serialization Stream Protocol.
@@ -29,7 +29,7 @@
 </span></span></span><span style=display:flex><span><span style=color:#75715e>     * Object Serialization Specification, Section 6.2, &#34;Stream Elements&#34;&lt;/a&gt;
 </span></span></span><span style=display:flex><span><span style=color:#75715e>     */</span>
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>final</span> ObjectStreamField<span style=color:#f92672>[]</span> serialPersistentFields <span style=color:#f92672>=</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>new</span> ObjectStreamField<span style=color:#f92672>[</span>0<span style=color:#f92672>];</span>    
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>new</span> ObjectStreamField<span style=color:#f92672>[</span><span style=color:#ae81ff>0</span><span style=color:#f92672>];</span>    
 </span></span><span style=display:flex><span><span style=color:#f92672>}</span>
 </span></span></code></pre></div><p><code>String</code> 如何保证 不可变的呢？</p><blockquote><p>字符数组使用了 <code>final</code> 修饰，这也只是表示了 字符数组的引用地址不可变，并不代表内容不可变。
 其使用 <code>private</code> 修饰，外部没有入口达到变动，从而保证了 String 的不可变性</p></blockquote><p>为什么保证 <code>String</code> 是 <code>final</code> 的呢？特点：</p><blockquote><ul><li>因为只有保证 <code>String</code> 是 <code>final</code> 的呢 <strong>只有当字符串不可变的，字符串池才可能实现</strong>;字符串池的实现可以节省很多的 <code>Heap</code>空间，因为不同的字符串变量都指向池中的同一个字符串.</li><li>假如字符串可变，那么<code>String</code> <code>interning</code> 不能实现，那么变量改变了这个字符串的值，那么其他指向这个值的变量的值也改变了。 （安全问题来了，用户名密码，端口、IP等）</li><li>字符串不可变，多线程安全，同一个字符串实例可以被对歌线程共享，不需要考虑同步问题</li><li>上面看出，在字符串不可变的情况下，创建的时候 <code>hashcode</code>也被缓存了，不需要重新计算。一部分性能问题可以很好的选择字符串</li></ul></blockquote><h1 id=string-在-jvm-层理解-拓展><code>String</code> 在 <code>JVM</code> 层理解 拓展</h1><p><code>JVM</code> 层面有 虚拟机栈、本地方法栈、堆、程序计数器、元数据区(方法区)

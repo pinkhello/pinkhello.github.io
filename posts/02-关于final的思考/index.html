@@ -28,7 +28,7 @@ public class Test { private final String name = &#34;hello world&#34;; public Te
 </span></span><span style=display:flex><span>    <span style=color:#f92672>}</span>
 </span></span><span style=display:flex><span><span style=color:#f92672>}</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>输出
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>输出</span>
 </span></span><span style=display:flex><span>Hello<span style=color:#f92672>,</span> WORLD<span style=color:#f92672>!</span>
 </span></span><span style=display:flex><span>hello  world
 </span></span></code></pre></div><p>第一个输出是因为说明运行成功，修改<code>final</code>修饰的对象的属性成功修改；</p><p>但是第二个输出，表明了我直接使用 <code>name</code> 的属性却还是输出端额原来的值.</p><p>反编译后的代码</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Test</span> <span style=color:#f92672>{</span>
@@ -64,7 +64,7 @@ public class Test { private final String name = &#34;hello world&#34;; public Te
 </span></span><span style=display:flex><span>    <span style=color:#f92672>}</span>
 </span></span><span style=display:flex><span><span style=color:#f92672>}</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>输出异常  Can not set <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>final</span> 
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>输出异常</span>  Can not set <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>final</span> 
 </span></span></code></pre></div><p>修改<code>Field</code>中的<code>modifiers</code>数据域，清除代表<code>final</code>的那个bit，才可以成功修改。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Test</span> <span style=color:#f92672>{</span>
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>final</span> <span style=color:#66d9ef>static</span> String NAME <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;static hello world&#34;</span><span style=color:#f92672>;</span>
@@ -86,7 +86,7 @@ public class Test { private final String name = &#34;hello world&#34;; public Te
 </span></span><span style=display:flex><span>    <span style=color:#f92672>}</span>
 </span></span><span style=display:flex><span><span style=color:#f92672>}</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>输出
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>输出</span>
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>STATIC HELLO<span style=color:#f92672>,</span> WORLD<span style=color:#f92672>!</span>
 </span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> hello world
