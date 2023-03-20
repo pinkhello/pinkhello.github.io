@@ -1,4 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tech on pinkhello</title><link>https://pinkhello.cc/categories/tech/</link><description>Recent content in Tech on pinkhello</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>pinkhello</copyright><lastBuildDate>Tue, 17 Jan 2023 01:06:16 +0800</lastBuildDate><atom:link href="https://pinkhello.cc/categories/tech/index.xml" rel="self" type="application/rss+xml"/><item><title>用`表驱动`对代码里的if-else来一次`马杀鸡`</title><link>https://pinkhello.cc/posts/62-%E8%A1%A8%E9%A9%B1%E5%8A%A8%E7%BC%96%E7%A8%8B/</link><pubDate>Tue, 17 Jan 2023 01:06:16 +0800</pubDate><guid>https://pinkhello.cc/posts/62-%E8%A1%A8%E9%A9%B1%E5%8A%A8%E7%BC%96%E7%A8%8B/</guid><description>什么是表驱动编程 表驱动 是在表中查找信息，而不使用 if-else 或者 switch 语句。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tech on pinkhello</title><link>https://pinkhello.cc/categories/tech/</link><description>Recent content in Tech on pinkhello</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>pinkhello</copyright><lastBuildDate>Mon, 20 Mar 2023 01:06:16 +0800</lastBuildDate><atom:link href="https://pinkhello.cc/categories/tech/index.xml" rel="self" type="application/rss+xml"/><item><title>效能工具列表</title><link>https://pinkhello.cc/posts/63-%E4%B8%80%E4%BA%9B%E7%A0%94%E5%8F%91%E6%95%88%E8%83%BD%E5%B7%A5%E5%85%B7/</link><pubDate>Mon, 20 Mar 2023 01:06:16 +0800</pubDate><guid>https://pinkhello.cc/posts/63-%E4%B8%80%E4%BA%9B%E7%A0%94%E5%8F%91%E6%95%88%E8%83%BD%E5%B7%A5%E5%85%B7/</guid><description>NocoDB 支持多种数据库转电子表格
+github: https://github.com/nocodb/nocodb
+Archery SQL 审核平台
+github: https://github.com/hhyo/Archery
+gocron 定时任务管理系统
+github: https://github.com/ouqiang/gocron/
+Graylog Graylog
+Loki Loki 日志系统
+Prometheus
+Jaeger 链路追踪工具
+github: https://github.com/jaegertracing/jaeger
+traefik 负载均衡
+github: https://github.com/traefik/traefik
+nps 一款轻量级、高性能、功能强大的内网穿透代理服务器
+github: https://github.com/ehang-io/nps
+trocr 离线的中文OCR识别
+github https://github.com/alisen39/TrWebOCR
+tr 离线的中文OCR识别
+github: https://github.com/myhub/tr
+alist 支持多种存储的文件列表服务
+github: https://github.com/alist-org/alist
+livego 直播服务
+github: https://github.com/gwuhaolin/livego
+一个支持多存储的文件列表程序，使用 Gin 和 Solidjs 搭建专属于你的消息推送服务，支持多种消息推送方式，支持 Markdown，仅单可执行文件，开箱即用</description></item><item><title>用`表驱动`对代码里的if-else来一次`马杀鸡`</title><link>https://pinkhello.cc/posts/62-%E8%A1%A8%E9%A9%B1%E5%8A%A8%E7%BC%96%E7%A8%8B/</link><pubDate>Tue, 17 Jan 2023 01:06:16 +0800</pubDate><guid>https://pinkhello.cc/posts/62-%E8%A1%A8%E9%A9%B1%E5%8A%A8%E7%BC%96%E7%A8%8B/</guid><description>什么是表驱动编程 表驱动 是在表中查找信息，而不使用 if-else 或者 switch 语句。
 表驱动-马杀鸡 往往我们追求的简单逻辑就是使用逻辑语句直接描述流程，但是往往随着逻辑语句的复杂，使得我们需要考虑用表驱动替代
 例如 if-else 和 switch
 if (type == 1) { create(); } else if (type == 2) { update(); } else if (type == 3) { query(); } else { delete(); } switch(type) { case 1: create(); break; case 2: update(); break; case 3: query(); break; default: delete(); break; } 这两种方法充斥着大量的逻辑判断，也就是 逻辑 &amp;amp; 数据 混杂。而表驱动的方式 核心就是解构 逻辑 与 数据，将 代码 和 数据 划分清楚。</description></item><item><title>重学Redis</title><link>https://pinkhello.cc/posts/60-redis/</link><pubDate>Mon, 29 Aug 2022 15:15:21 +0800</pubDate><guid>https://pinkhello.cc/posts/60-redis/</guid><description>redis redis 是BSD许可的开源内存数据中间件，可以用作 数据库、缓存、消息Broker、流引擎。
