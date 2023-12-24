@@ -326,4 +326,20 @@ UK(A,B) B+ 树的特点
 最终一致性
 监控平台 分库分表的 核销券的及时性【内部券需要、外部券】 线程池的
 RtreenLock 的 SYnchorized 的区别
-Synchorized 的 JDK 1.6 的优化</description></item></channel></rss>
+Synchorized 的 JDK 1.6 的优化
+FactoryBean BeanFactory 区别 （X）
+Mybatis 的一级缓存 和 二级缓存（X）
+Mybatis $ 和 # 区别 V
+Mybatis 延迟加载 （X）</description></item><item><title/><link>https://pinkhello.cc/posts/z-draft-%E9%9D%A2%E8%AF%95%E9%A2%98/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pinkhello.cc/posts/z-draft-%E9%9D%A2%E8%AF%95%E9%A2%98/</guid><description>Redis Zset
+Redis Zset 是 Redis 中的一个有序集合数据类型，它可以用来存储多个成员，每个成员都关联了一个分数。Zset 中的成员可以按照分数的大小进行排序，分数越大，成员越靠前。
+Zset 可以用来实现很多应用场景，比如：
+排行榜：可以用 Zset 来存储用户的积分，然后按照积分的大小进行排序，这样就可以得到用户的排行榜。 推荐系统：可以用 Zset 来存储用户的兴趣，然后按照兴趣的相关性进行排序，这样就可以得到用户的推荐列表。 分布式锁：可以用 Zset 来实现分布式锁，通过设置分数来控制锁的持有时间。 Zset 的结构
+Zset 的结构如下图所示：
+Zset 由三个部分组成：
+成员列表：存储了 Zset 中的所有成员。 分数列表：存储了 Zset 中所有成员的分数。 指针列表：指向成员列表和分数列表中对应元素的指针。 Zset 的操作
+Zset 支持的操作包括：
+添加成员：可以向 Zset 中添加一个成员，并指定该成员的分数。 删除成员：可以从 Zset 中删除一个成员。 修改成员的分数：可以修改 Zset 中某个成员的分数。 查询成员：可以查询 Zset 中某个成员的分数。 范围查询：可以查询 Zset 中某个范围内的成员。 Zset 的应用场景
+Zset 可以用来实现很多应用场景，比如：
+排行榜：可以用 Zset 来存储用户的积分，然后按照积分的大小进行排序，这样就可以得到用户的排行榜。 推荐系统：可以用 Zset 来存储用户的兴趣，然后按照兴趣的相关性进行排序，这样就可以得到用户的推荐列表。 分布式锁：可以用 Zset 来实现分布式锁，通过设置分数来控制锁的持有时间。 Zset 的优缺点
+Zset 的优点包括：
+可以用来存储多个成员，每个成员都关联了一个分数。 可以按照分数的大小进行排序。 支持范围查询。 Zset 的缺点包括：</description></item></channel></rss>
